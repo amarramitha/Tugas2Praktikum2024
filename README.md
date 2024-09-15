@@ -1,23 +1,8 @@
 # Tugas Pertemuan 2
 
-Fork dan clone repository ini, lalu jalankan perintah 
-```
-flutter pub get
-```
-Buatlah tampilan form yang berisi nama, nim, dan tahun lahir pada file `ui/form_data.dart`, lalu buatlah tampilan hasil dari input data tersebut pada file `ui/tampil_data.dart`
+berikut penjelasan proses passing data dari form menuju tampilan.
 
-JELASKAN PROSES PASSING DATA DARI FORM MENUJU TAMPILAN DENGAN FILE `README.md`
-
-Buat tampilan semenarik mungkin untuk dilihat.
-
-
-Nama : ___
-
-NIM : ___
-
-Shift Baru: ___
-
-## Screenshot
-Contoh :
-![Lampiran Form](form.png)
-![Lampiran Hasil](hasil.png)
+1. Pengguna mengisi formulir yang memiliki 3 input, yaitu nama, nim, dan tahun lahir. Pada fromData, terdapat 3 TextEditingController yang digunakan untuk mengelola teks yang dimasukkan oleh pengguna.
+2. Ketika pengguna menekan tombol "Simpan", maka fungsi _tombolSimpan() akan dijalankan. Nilai dari TextEditingController diambil, kemudian dikirim ke halaman baru menggunakan Navigator.of(context).push().
+3. Navigator.of(context).push() akan membuat navigasi ke halaman baru (TampilData) sambil mengirim data yang dikumpulkan(nama, nim, dan tahun lahir). kemudian, data ini diterima oleh TampilData melalui parameter nama, nim, dan tahun yang dideklarasikan sebagai variabel final dalam class TampilData.
+4. Setelah halaman TampilData dibuka, data yang diterima akan ditampilkan dengan teks yang sudah disusun. 
